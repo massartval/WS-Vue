@@ -33,7 +33,7 @@ En sous-groupes, vous allez réaliser une to-do liste en suivant ces indications
 
 ### 1. Créer l'input dans le composant parent **`App.vue`** 
 Créer l’input pour introduire un nouvel item à la liste (et profitez-en pour ajouter un titre ou deux)<br>
-Sous les “tags” qui appellent le composant enfant `<headerList>`, créer à l’aide de boostrap :
+Sous les “tags” qui appellent le composant enfant `<headerList>`, créez à l’aide de boostrap :
 
 - `container`
   - `row`
@@ -76,7 +76,7 @@ methods: {
 }
 ```
   
-:three: **On vérifie que ça fonctionne**
+:three: **On vérifie que ça fonctionne**<br>
 Insérez l’array `listElement` dans le `<template>` sous la forme `{{ listElement }}`.<br>
 Essayer d’ajouter des éléments à votre To do list. Ça marche? Alors on efface le `{{ listElement }}` et on passe à la suite.<br>
 
