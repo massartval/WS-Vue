@@ -54,12 +54,12 @@ A présent, on va faire en sorte que l’élément que vous tapez dans l’input
 
 :one: **Capter le contenu inséré dans l’input**
 `v-model = “element”`<br>
-et déclarer la variable “element” dans script<br>
+et déclarer la variable `element` dans script<br>
 ```
 data() {
     return {
         listElement : [],
-        newElement : "",
+        element : "",
      }
 },
 ```
