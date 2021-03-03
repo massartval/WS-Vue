@@ -24,16 +24,17 @@ Vous pouvez vous rendre sur votre localhost. Vous obtenez une page blanche, c’
 
 ## Exercice en sous-groupes
 
-* **Groupe 1** :
-* **Groupe 2** :
-* **Groupe 3** :
-* **Groupe 4** :
+* **Groupe 1** : Yvan, Abderrahman, Julien
+* **Groupe 2** : Yannick, Antoine, Manon
+* **Groupe 3** : Olivia, Nathanaël, Pauline
+* **Groupe 4** : Gaetano, Valentin, Frédéric
+* **Groupe 5** : Dorian, Thomas, Jonathan, Philippe
 
 En sous-groupes, vous allez réaliser une to-do liste en suivant ces indications :
 
 ### 1. Créer l'input dans le composant parent **`App.vue`** 
-Créer l’input pour introduire un nouvel item à la liste (et profitez-en pour ajouter un titre ou deux)<br>
-Sous les “tags” qui appellent le composant enfant `<headerList>`, créez à l’aide de boostrap :
+Dans `App.vue`, vous aller créer un titre, un sous-titre, et l’input pour introduire un nouvel item à la liste<br>
+Vous créez ces éléments à l’aide de boostrap sous les “tags” `<headerList>` qui appellent le composant enfant:
 
 - `container`
   - `row`
@@ -46,15 +47,15 @@ Sous les “tags” qui appellent le composant enfant `<headerList>`, créez à 
         - `button class="btn”`
 
 Feel free de customiser avec les classes bootstrap.<br>
-C’est beau? On continue :
+C’est beau ? On continue :
 
 ## 2. Récupérer le contenu de l'input
 
-A présent, on va faire en sorte que l’élément que vous tapez dans l’input s’ajoute à une array au moment du “click” sur le button.
+Au “click” sur le button, le contenu de l’input s’ajoute à une array .
 
 :one: **Capter le contenu inséré dans l’input**
-`v-model = “element”`<br>
-et déclarer la variable `element` dans script<br>
+A/ Capter le contenu de l'input. Indice : `v-model = “element”`<br>
+B/ Déclarer la variable utilisée dans v-model (`element`) dans `data`<br>
 ```
 data() {
     return {
@@ -64,10 +65,10 @@ data() {
 },
 ```
    
-:two: **Lancer une méthode au click sur le bouton**
-`v-on:click(ou @click).prevent = “doThat”`<br>
-REM : le `.prevent` empêche la page de se recharger au click<br>
-Et dans `<script>` :
+:two: **Appeler une méthode au click sur le bouton**
+A/ Appeler la méthode dans le bouton. Indice : `v-on:click(ou @click).prevent = “doThat”`<br>
+*REM : le `.prevent` empêche la page de se recharger au click*<br>
+B/ Déclarer cette méthode de votre choix dans `<script>` :
 ```
 methods: {
     doThat: function() {
@@ -76,13 +77,13 @@ methods: {
 }
 ```
   
-:three: **On vérifie que ça fonctionne**<br>
+:three: **Vérifier que ça fonctionne**<br>
 Insérez l’array `listElement` dans le `<template>` sous la forme `{{ listElement }}`.<br>
 Essayer d’ajouter des éléments à votre To do list. Ça marche? Alors on efface le `{{ listElement }}` et on passe à la suite.<br>
 
 
 ## 3. Afficher la liste dans un nouveau composant
-À présent, il faudrait que les éléments de votre liste `{{ listElement }}` s’affichent dans un nouveau composant enfant:
+À présent, il faudrait que les éléments de votre array `{{ listElement }}` s’affichent dans un nouveau composant enfant:
   - :one: Créer le composant enfant `List.vue` et lui donner un nom d’exportation dans `export default`
   - :two: Importer le composant enfant dans le composant parent et lui donner le nom que l’on souhaite utiliser comme *tag* dans <br>
  ```
@@ -92,13 +93,13 @@ Essayer d’ajouter des éléments à votre To do list. Ça marche? Alors on eff
 },
 ```
 
-  - :three: Faire passer des données (l’array `listElement`) du composant parent au composant enfant. Pour cela, utiliser les “props”:
-      - a. Dans le *tag* (dans le composant parent), utiliser `v-bind:listElement="listElement"`
-      - b. Dans le composant enfant, utiliser `props: ['listElement']`
-  - :four: Faire apparaître chaque élément de l'array dans une `<li>` en bouclant sur `listElement` grâce à `v-for` (attention, pour que ça fonctionne, il faut coupler avec `v-bind:key="index"`).
+  - :three: Faire passer des données du composant parent au composant enfant. Dans notre cas, la donnée à faire passer est l’array `listElement`. Pour cela, utiliser les “props”:
+      - a. Dans le composant parent, ajouter au *tag* qui appelle le composant enfant `v-bind:listElement="listElement"`.
+      - b. Dans le composant enfant, utiliser `props: ['listElement']`.
+  - :four: Faire apparaître chaque élément de l'array `listElement` dans une `<li>` grâce à la boucle `v-for` (attention, pour que ça fonctionne, il faut coupler avec `v-bind:key="index"`).
   - :five: Ajouter un bouton pour supprimer un élément de la liste :
-      - a. Dans la boucle, ajouter un `<button>` et y associer une méthode grâce à `v-on:click(ou @click)="doThat(onThis)"`
-      - b. Déclarer la méthode (supprimer l’élément[x] de l’array `listElement` au click sur le bouton :
+      - a. Dans la boucle, ajouter un `<button>` et y appeler une méthode au clic. Indice : `v-on:click(ou @click)="doThat(onThis)"`
+      - b. Déclarer cette méthode qui permet de supprimer l’élément[x] de l’array `listElement` au click :
 ```
 methods: {
     doThat: function(onThis) {
