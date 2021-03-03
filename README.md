@@ -54,8 +54,8 @@ C’est beau ? On continue :
 Au “click” sur le button, le contenu de l’input s’ajoute à une array .
 
 :one: **Capter le contenu inséré dans l’input**<br>
-A/ Capter le contenu de l'input. Indice : `v-model = “element”`<br>
-B/ Déclarer la variable utilisée dans v-model (`element`) dans `data`<br>
+A/ Capter le contenu de l'input. Indice : `v-model = "element"`<br>
+B/ Déclarer la variable utilisée dans v-model (`"element"` dans l'exemple) dans `data`<br>
 ```
 data() {
     return {
