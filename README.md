@@ -53,7 +53,7 @@ C’est beau ? On continue :
 
 Au “click” sur le button, le contenu de l’input s’ajoute à une array .
 
-:one: **Capter le contenu inséré dans l’input**
+:one: **Capter le contenu inséré dans l’input**<br>
 A/ Capter le contenu de l'input. Indice : `v-model = “element”`<br>
 B/ Déclarer la variable utilisée dans v-model (`element`) dans `data`<br>
 ```
@@ -65,7 +65,7 @@ data() {
 },
 ```
    
-:two: **Appeler une méthode au click sur le bouton**
+:two: **Appeler une méthode au click sur le bouton**<br>
 A/ Appeler la méthode dans le bouton. Indice : `v-on:click(ou @click).prevent = “doThat”`<br>
 *REM : le `.prevent` empêche la page de se recharger au click*<br>
 B/ Déclarer cette méthode de votre choix dans `<script>` :
