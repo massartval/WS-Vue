@@ -1,4 +1,4 @@
-# WKSHP-VueJS_to_do_list
+# WORKSHOP-VueJS. To do list.
 
 ![To do List preview](https://github.com/FlorenceJacobs/to_do_list_vueJS/blob/main/capture_to_do_list_vueJS.png?raw=true)
 
